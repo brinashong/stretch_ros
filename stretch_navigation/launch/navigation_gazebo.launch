@@ -27,6 +27,7 @@
     <rosparam file="$(find stretch_navigation)/config/global_costmap_params_withmap.yaml" command="load" />
     <rosparam file="$(find stretch_navigation)/config/base_local_planner_params.yaml" command="load" />
     <remap from="/cmd_vel" to="/stretch_diff_drive_controller/cmd_vel" />
+    <remap from="/move_base_simple/goal" to="/stretch/goal" />
   </node>
 
   <!-- VISUALIZE -->
