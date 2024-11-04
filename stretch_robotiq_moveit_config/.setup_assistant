@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: stretch_robotiq_description
+    relative_path: urdf/stretch_robotiq_description.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/stretch.srdf
+  CONFIG:
+    author_name: Brina Shong
+    author_email: brinashong@gmail.com
+    generated_timestamp: 1730620742
