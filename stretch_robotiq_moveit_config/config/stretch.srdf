@@ -17,7 +17,7 @@
         <joint name="joint_arm_l1"/>
         <joint name="joint_arm_l0"/>
         <joint name="joint_wrist_yaw"/>
-        <chain base_link="base_link" tip_link="link_wrist_yaw"/>
+        <chain base_link="base_link" tip_link="link_grasp_center"/>
     </group>
     <group name="stretch_gripper">
         <link name="robotiq_arg2f_base_link"/>
@@ -73,7 +73,9 @@
         <joint name="finger_joint" value="0.6955"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper" parent_link="right_inner_finger_pad" group="stretch_arm"/>
+    <end_effector name="gripper" parent_link="link_grasp_center" group="stretch_arm"/>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="map_to_base_link_joint" type="planar" parent_frame="map" child_link="base_link"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="base_imu" link2="base_link" reason="Adjacent"/>
     <disable_collisions link1="base_imu" link2="camera_link" reason="Never"/>
@@ -134,7 +136,9 @@
     <disable_collisions link1="base_link" link2="link_right_wheel" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="link_wrist_yaw" reason="Never"/>
     <disable_collisions link1="base_link" link2="respeaker_base" reason="Never"/>
+    <disable_collisions link1="base_link" link2="right_inner_finger_pad" reason="Never"/>
     <disable_collisions link1="base_link" link2="right_inner_knuckle" reason="Default"/>
+    <disable_collisions link1="base_link" link2="right_outer_finger" reason="Never"/>
     <disable_collisions link1="base_link" link2="right_outer_knuckle" reason="Default"/>
     <disable_collisions link1="base_link" link2="robotiq_arg2f_base_link" reason="Default"/>
     <disable_collisions link1="camera_link" link2="caster_link" reason="Never"/>
@@ -348,6 +352,7 @@
     <disable_collisions link1="left_outer_knuckle" link2="link_left_wheel" reason="Never"/>
     <disable_collisions link1="left_outer_knuckle" link2="link_lift" reason="Never"/>
     <disable_collisions link1="left_outer_knuckle" link2="link_mast" reason="Never"/>
+    <disable_collisions link1="left_outer_knuckle" link2="link_right_wheel" reason="Never"/>
     <disable_collisions link1="left_outer_knuckle" link2="link_wrist_yaw" reason="Never"/>
     <disable_collisions link1="left_outer_knuckle" link2="respeaker_base" reason="Never"/>
     <disable_collisions link1="left_outer_knuckle" link2="right_inner_finger" reason="Never"/>
@@ -514,7 +519,9 @@
     <disable_collisions link1="link_aruco_right_base" link2="link_right_wheel" reason="Never"/>
     <disable_collisions link1="link_aruco_right_base" link2="link_wrist_yaw" reason="Never"/>
     <disable_collisions link1="link_aruco_right_base" link2="respeaker_base" reason="Never"/>
-    <disable_collisions link1="link_aruco_right_base" link2="right_inner_finger" reason="Never"/>
+    <disable_collisions link1="link_aruco_right_base" link2="right_inner_finger_pad" reason="Never"/>
+    <disable_collisions link1="link_aruco_right_base" link2="right_inner_knuckle" reason="Never"/>
+    <disable_collisions link1="link_aruco_right_base" link2="right_outer_finger" reason="Never"/>
     <disable_collisions link1="link_aruco_right_base" link2="right_outer_knuckle" reason="Never"/>
     <disable_collisions link1="link_aruco_right_base" link2="robotiq_arg2f_base_link" reason="Default"/>
     <disable_collisions link1="link_aruco_shoulder" link2="link_aruco_top_wrist" reason="Never"/>
@@ -619,7 +626,10 @@
     <disable_collisions link1="link_mast" link2="robotiq_arg2f_base_link" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="link_wrist_yaw" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="respeaker_base" reason="Never"/>
+    <disable_collisions link1="link_right_wheel" link2="right_inner_finger" reason="Never"/>
+    <disable_collisions link1="link_right_wheel" link2="right_inner_finger_pad" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="right_inner_knuckle" reason="Default"/>
+    <disable_collisions link1="link_right_wheel" link2="right_outer_finger" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="right_outer_knuckle" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="robotiq_arg2f_base_link" reason="Default"/>
     <disable_collisions link1="link_wrist_yaw" link2="respeaker_base" reason="Never"/>
