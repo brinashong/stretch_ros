@@ -27,5 +27,6 @@
   <depend>std_msgs</depend>
   <depend>teleop_twist_joy</depend>
   <depend>xacro</depend>
+  <depend>roboticsgroup_upatras_gazebo_plugins</depend>
 
 </package>
