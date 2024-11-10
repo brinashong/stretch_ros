@@ -8,6 +8,7 @@
   <xacro:include filename="$(find stretch_gazebo)/urdf/stretch_d435i.xacro" />
   <xacro:include filename="$(find stretch_gazebo)/urdf/stretch_laser_range_finder.xacro" />
   <xacro:include filename="$(find stretch_gazebo)/urdf/stretch_respeaker.xacro" />
+  <xacro:include filename="$(find stretch_gazebo)/urdf/stretch_base_imu.xacro" />
   <xacro:include filename="$(find robotiq_2f_140_gripper_visualization)/urdf/robotiq_arg2f_140_model.xacro" />
   <!-- <xacro:include filename="$(find stretch_robotiq_description)/urdf/robotiq_arg85_description.xacro" /> -->
 
@@ -539,6 +540,13 @@
       link="robotiq_arg2f_base_link" />
     <axis
       xyz="0 0 0" />
+  </joint>
+
+  <link name="link_grasp_center" />
+  <joint name="joint_grasp_center" type="fixed">
+      <origin rpy="0 0 0" xyz="0 0 0.2" />
+      <parent link="robotiq_arg2f_base_link" />
+      <child link="link_grasp_center" />
   </joint>
 
   <!-- Gripper -->
