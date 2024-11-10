@@ -22,6 +22,13 @@
       xyz="0 0 0" />
   </joint>
 
+  <link name="link_grasp_center" />
+  <joint name="joint_grasp_center" type="fixed">
+      <origin rpy="0 0 0" xyz="0 0 0.2" />
+      <parent link="robotiq_arg2f_base_link" />
+      <child link="link_grasp_center" />
+  </joint>
+
   <xacro:include filename="stretch_main.xacro" />
   <xacro:include filename="stretch_aruco.xacro" />
   <xacro:include filename="stretch_d435i.xacro" />
