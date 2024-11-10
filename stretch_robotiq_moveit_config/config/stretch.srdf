@@ -17,6 +17,7 @@
         <joint name="joint_arm_l1"/>
         <joint name="joint_arm_l0"/>
         <joint name="joint_wrist_yaw"/>
+        <chain base_link="base_link" tip_link="link_grasp_center"/>
     </group>
     <group name="stretch_gripper">
         <link name="robotiq_arg2f_base_link"/>
@@ -142,9 +143,7 @@
     <disable_collisions link1="base_link" link2="link_right_wheel" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="link_wrist_yaw" reason="Never"/>
     <disable_collisions link1="base_link" link2="respeaker_base" reason="Never"/>
-    <disable_collisions link1="base_link" link2="right_inner_finger_pad" reason="Never"/>
     <disable_collisions link1="base_link" link2="right_inner_knuckle" reason="Default"/>
-    <disable_collisions link1="base_link" link2="right_outer_finger" reason="Never"/>
     <disable_collisions link1="base_link" link2="right_outer_knuckle" reason="Default"/>
     <disable_collisions link1="base_link" link2="robotiq_arg2f_base_link" reason="Default"/>
     <disable_collisions link1="camera_link" link2="caster_link" reason="Never"/>
@@ -249,6 +248,7 @@
     <disable_collisions link1="left_inner_finger" link2="link_arm_l4" reason="Never"/>
     <disable_collisions link1="left_inner_finger" link2="link_aruco_inner_wrist" reason="Never"/>
     <disable_collisions link1="left_inner_finger" link2="link_aruco_left_base" reason="Never"/>
+    <disable_collisions link1="left_inner_finger" link2="link_aruco_right_base" reason="Never"/>
     <disable_collisions link1="left_inner_finger" link2="link_aruco_shoulder" reason="Never"/>
     <disable_collisions link1="left_inner_finger" link2="link_aruco_top_wrist" reason="Never"/>
     <disable_collisions link1="left_inner_finger" link2="link_head" reason="Never"/>
@@ -299,7 +299,6 @@
     <disable_collisions link1="left_inner_knuckle" link2="link_arm_l4" reason="Never"/>
     <disable_collisions link1="left_inner_knuckle" link2="link_aruco_inner_wrist" reason="Never"/>
     <disable_collisions link1="left_inner_knuckle" link2="link_aruco_left_base" reason="Never"/>
-    <disable_collisions link1="left_inner_knuckle" link2="link_aruco_right_base" reason="Never"/>
     <disable_collisions link1="left_inner_knuckle" link2="link_aruco_shoulder" reason="Never"/>
     <disable_collisions link1="left_inner_knuckle" link2="link_aruco_top_wrist" reason="Never"/>
     <disable_collisions link1="left_inner_knuckle" link2="link_head" reason="Never"/>
@@ -325,7 +324,6 @@
     <disable_collisions link1="left_outer_finger" link2="link_arm_l4" reason="Never"/>
     <disable_collisions link1="left_outer_finger" link2="link_aruco_inner_wrist" reason="Never"/>
     <disable_collisions link1="left_outer_finger" link2="link_aruco_left_base" reason="Never"/>
-    <disable_collisions link1="left_outer_finger" link2="link_aruco_right_base" reason="Never"/>
     <disable_collisions link1="left_outer_finger" link2="link_aruco_shoulder" reason="Never"/>
     <disable_collisions link1="left_outer_finger" link2="link_aruco_top_wrist" reason="Never"/>
     <disable_collisions link1="left_outer_finger" link2="link_head" reason="Never"/>
@@ -526,8 +524,6 @@
     <disable_collisions link1="link_aruco_right_base" link2="link_wrist_yaw" reason="Never"/>
     <disable_collisions link1="link_aruco_right_base" link2="respeaker_base" reason="Never"/>
     <disable_collisions link1="link_aruco_right_base" link2="right_inner_finger_pad" reason="Never"/>
-    <disable_collisions link1="link_aruco_right_base" link2="right_inner_knuckle" reason="Never"/>
-    <disable_collisions link1="link_aruco_right_base" link2="right_outer_finger" reason="Never"/>
     <disable_collisions link1="link_aruco_right_base" link2="right_outer_knuckle" reason="Never"/>
     <disable_collisions link1="link_aruco_right_base" link2="robotiq_arg2f_base_link" reason="Default"/>
     <disable_collisions link1="link_aruco_shoulder" link2="link_aruco_top_wrist" reason="Never"/>
@@ -632,10 +628,7 @@
     <disable_collisions link1="link_mast" link2="robotiq_arg2f_base_link" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="link_wrist_yaw" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="respeaker_base" reason="Never"/>
-    <disable_collisions link1="link_right_wheel" link2="right_inner_finger" reason="Never"/>
-    <disable_collisions link1="link_right_wheel" link2="right_inner_finger_pad" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="right_inner_knuckle" reason="Default"/>
-    <disable_collisions link1="link_right_wheel" link2="right_outer_finger" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="right_outer_knuckle" reason="Never"/>
     <disable_collisions link1="link_right_wheel" link2="robotiq_arg2f_base_link" reason="Default"/>
     <disable_collisions link1="link_wrist_yaw" link2="respeaker_base" reason="Never"/>
