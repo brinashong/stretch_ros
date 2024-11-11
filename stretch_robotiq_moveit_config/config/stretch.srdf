@@ -43,7 +43,23 @@
         <joint name="joint_arm_l1" value="0"/>
         <joint name="joint_arm_l2" value="0"/>
         <joint name="joint_arm_l3" value="0"/>
-        <joint name="joint_lift" value="0.2405"/>
+        <joint name="joint_lift" value="0.7472"/>
+        <joint name="joint_wrist_yaw" value="0"/>
+    </group_state>
+    <group_state name="hover" group="stretch_arm">
+        <joint name="joint_arm_l0" value="0.07516"/>
+        <joint name="joint_arm_l1" value="0.07137"/>
+        <joint name="joint_arm_l2" value="0.09055"/>
+        <joint name="joint_arm_l3" value="0.08287"/>
+        <joint name="joint_lift" value="0.8085"/>
+        <joint name="joint_wrist_yaw" value="0"/>
+    </group_state>
+    <group_state name="approach" group="stretch_arm">
+        <joint name="joint_arm_l0" value="0.07526"/>
+        <joint name="joint_arm_l1" value="0.07129"/>
+        <joint name="joint_arm_l2" value="0.09046"/>
+        <joint name="joint_arm_l3" value="0.0829"/>
+        <joint name="joint_lift" value="0.44778"/>
         <joint name="joint_wrist_yaw" value="0"/>
     </group_state>
     <group_state name="extended" group="stretch_arm">
