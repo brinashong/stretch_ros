@@ -59,7 +59,7 @@
         <joint name="joint_arm_l1" value="0.07129"/>
         <joint name="joint_arm_l2" value="0.09046"/>
         <joint name="joint_arm_l3" value="0.0829"/>
-        <joint name="joint_lift" value="0.44778"/>
+        <joint name="joint_lift" value="0.48"/>
         <joint name="joint_wrist_yaw" value="0"/>
     </group_state>
     <group_state name="extended" group="stretch_arm">
@@ -89,7 +89,7 @@
         <joint name="finger_joint" value="0.6955"/>
     </group_state>
     <group_state name="soda_can" group="stretch_gripper">
-        <joint name="finger_joint" value="0.2"/>
+        <joint name="finger_joint" value="0.37"/>
     </group_state>
     <group_state name="cup" group="stretch_gripper">
         <joint name="finger_joint" value="0.4972"/>
