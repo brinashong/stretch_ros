@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
+  <param name="use_sim_time" value="true"/>
   <arg name="map_yaml"               default="$(find aws_robomaker_small_house_world)/maps/turtlebot3_waffle_pi/map.yaml" doc="filepath to previously captured map (required)" />
   <arg name="rviz"                   default="true"                                                                       doc="whether to show Rviz" />
   <arg name="gazebo_world"           default="$(find aws_robomaker_small_house_world)/worlds/small_house_homebot.world"   doc="the environment within which Stretch is loaded in Gazebo" />
@@ -18,7 +19,12 @@
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_yaml)" />
 
   <!-- LOCALIZATION -->
-  <include file="$(find amcl)/examples/amcl_diff.launch" />
+  <!-- <include file="$(find amcl)/examples/amcl_diff.launch" > -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization" output="screen">
+    <!-- <param name="use_sim_time" value="true"/> -->
+    <remap from="/set_pose" to="/initialpose" />
+    <rosparam file="$(find stretch_navigation)/config/ekf_config.yaml" command="load"/>
+  </node>
 
   <!-- NAVIGATION -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
