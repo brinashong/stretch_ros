@@ -19,7 +19,7 @@ controller_list:
       - joint_head_tilt
 initial:  # Define initial robot poses per group
   - group: stretch_arm
-    pose: home
+    pose: home_low
   - group: stretch_gripper
     pose: open
   - group: stretch_head
