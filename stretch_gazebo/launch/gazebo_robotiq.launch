@@ -11,6 +11,7 @@
   <arg name="visualize_lidar" default="false"/>
   <arg name="world" default="worlds/empty.world"/>
   <arg name="dex_wrist" default="false"/>
+  <arg name="enable_twist" default="true"/>
   <param name="stretch_gazebo/dex_wrist" type="bool" value="$(arg dex_wrist)"/>
   <arg name="publish_upright_img" default="false" doc="whether to pub rotated upright color image" />
 
@@ -68,7 +69,22 @@
         args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller stretch_dex_wrist_controller"
   if="$(arg dex_wrist)"/>
 
-  <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom.py" output="screen"/>
+  <!-- <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom.py" output="screen"/> -->
+
+  <!-- Start EKF for localization -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+    <rosparam command="load" file="$(find stretch_gazebo)/config/odom.yaml" />
+  </node>
+
+  <!-- Interactive marker to drive robot in RViz -->
+  <node if="$(arg enable_twist)" pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen">
+  </node>
+
+  <!-- Multiple input velocity with priority -->
+  <node if="$(arg enable_twist)" pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find stretch_gazebo)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="/stretch_diff_drive_controller/cmd_vel"/>
+  </node>
 
   <!-- UPRIGHT ROTATED CAMERA VIEW -->
   <node name="upright_rotater" pkg="image_rotate" type="image_rotate" if="$(arg publish_upright_img)">
