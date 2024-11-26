@@ -67,4 +67,4 @@ TebLocalPlannerROS:
   weight_kinematics_turning_radius: 0.0
   weight_obstacle: 50.0
   xy_goal_tolerance: 0.01
-  yaw_goal_tolerance: 0.01
+  yaw_goal_tolerance: 0.005
