@@ -78,14 +78,14 @@
   </node>
 
   <!-- Interactive marker to drive robot in RViz -->
-  <node if="$(arg enable_twist)" pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen">
-  </node>
+  <!-- <node if="$(arg enable_twist)" pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen"> -->
+  <!-- </node> -->
 
   <!-- Multiple input velocity with priority -->
-  <node if="$(arg enable_twist)" pkg="twist_mux" type="twist_mux" name="twist_mux">
-    <rosparam command="load" file="$(find stretch_gazebo)/config/twist_mux.yaml" />
-    <remap from="cmd_vel_out" to="/stretch_diff_drive_controller/cmd_vel"/>
-  </node>
+  <!-- <node if="$(arg enable_twist)" pkg="twist_mux" type="twist_mux" name="twist_mux"> -->
+  <!--   <rosparam command="load" file="$(find stretch_gazebo)/config/twist_mux.yaml" /> -->
+  <!--   <remap from="cmd_vel_out" to="/stretch_diff_drive_controller/cmd_vel"/> -->
+  <!-- </node> -->
 
   <!-- UPRIGHT ROTATED CAMERA VIEW -->
   <node name="upright_rotater" pkg="image_rotate" type="image_rotate" if="$(arg publish_upright_img)">
