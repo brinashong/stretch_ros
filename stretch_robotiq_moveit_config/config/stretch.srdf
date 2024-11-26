@@ -104,7 +104,7 @@
         <joint name="finger_joint" value="0.37"/>
     </group_state>
     <group_state name="cup" group="stretch_gripper">
-        <joint name="finger_joint" value="0.43"/>
+        <joint name="finger_joint" value="0.35"/>
     </group_state>
     <group_state name="book" group="stretch_gripper">
         <joint name="finger_joint" value="0.422"/>
