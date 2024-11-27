@@ -20,6 +20,7 @@
 
   <!-- LOCALIZATION -->
   <!-- <include file="$(find stretch_navigation)/launch/amcl.launch" /> -->
+  <!-- <include file="$(find amcl)/examples/amcl_diff.launch" /> -->
 
   <!-- NAVIGATION -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
