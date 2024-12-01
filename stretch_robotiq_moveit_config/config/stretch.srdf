@@ -100,15 +100,13 @@
     <group_state name="closed" group="stretch_gripper">
         <joint name="finger_joint" value="0.6955"/>
     </group_state>
-    <group_state name="soda_can" group="stretch_gripper">
+    <group_state name="can" group="stretch_gripper">
         <joint name="finger_joint" value="0.37"/>
     </group_state>
     <group_state name="cup" group="stretch_gripper">
-        <!-- <joint name="finger_joint" value="0.35"/> -->
         <joint name="finger_joint" value="0.55"/>
     </group_state>
     <group_state name="book" group="stretch_gripper">
-        <!-- <joint name="finger_joint" value="0.422"/> -->
         <joint name="finger_joint" value="0.45"/>
     </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
